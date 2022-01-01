@@ -6,9 +6,6 @@ import WebFont from "webfontloader";
 import React from "react";
 import Home from "./components/Home/Home.js";
 
-
-
-
 function App() {
   React.useEffect(()=>{
     WebFont.load({
@@ -30,5 +27,5 @@ function App() {
     </>
   );
 }
-//5:42:00
+//5:57:00
 export default App;

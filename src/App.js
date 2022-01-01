@@ -1,10 +1,10 @@
 import './App.css';
-import Header from "./components/layout/Header/Header.js"
-import Footer from "./components/layout/Footer/Footer.js"
+import Header from "./components/layout/Header/Header.js";
+import Footer from "./components/layout/Footer/Footer.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WebFont from "webfontloader";
 import React from "react";
-import Home from "./components/Home/Home.js"
+import Home from "./components/Home/Home.js";
 
 
 
@@ -30,5 +30,5 @@ function App() {
     </>
   );
 }
-
+//5:42:00
 export default App;

@@ -15,7 +15,7 @@ footer{
   }
   .leftFooter > h4 {
     font-family: "Roboto";
-    font-size: 1vmax;
+    font-size: 1.4vmax;
   }
   .leftFooter > p {
     text-align: center;
@@ -31,7 +31,6 @@ footer{
   
   .midFooter {
     width: 60%;
-  
     text-align: center;
   }
   

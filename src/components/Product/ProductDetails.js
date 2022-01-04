@@ -15,7 +15,6 @@ const ProductDetails = () => {
 
     //This will fetch data from redux Store to frontend.
     const { product, loading, error } = useSelector((state) => state.productDetails)
-    console.log(id);
 
     //This will only fetch data from backend to redux store 
     useEffect(() => {
@@ -35,16 +34,15 @@ const ProductDetails = () => {
             <div className="ProductDetails">
                 <div>
                     <Carousel>
-                        {product.images && product.images.map((item, i) => {
-                            // console.log(item , "  product.images.url = ", item.url);
-                            <img
-                                className='CarouselImage'
-                                key={item.url}
-                                src={item.url}
-                                alt={`${i} Slide`}
-                            />
-                            
-                        })}
+                        {product.images &&
+                            product.images.map((item, i) => (
+                                <img
+                                    className="CarouselImage"
+                                    key={i}
+                                    src={item.url}
+                                    alt={`${i} Slide`}
+                                />
+                            ))}
                     </Carousel>
                 </div>
                 <div>
@@ -61,7 +59,7 @@ const ProductDetails = () => {
                         <div className="detailsBlock-3-1">
                             <div className="detailsBlock-3-1-1">
                                 <button>-</button>
-                                <input value="1" type="number"  />
+                                <input type="number" />
                                 <button >+</button>
                             </div>
                             <button>

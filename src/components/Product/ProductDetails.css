@@ -24,6 +24,10 @@
 
 .CarouselImage {
   width: 20vmax;
+  border: 2px solid black;
+}
+.makeStyles-itemWrapper-3{
+  width: 300px;
 }
 
 .detailsBlock-1 > h2 {

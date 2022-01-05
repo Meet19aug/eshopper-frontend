@@ -14,14 +14,12 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item"><Link className="nav-link" aria-current="page" to="/">Home</Link></li>
-              <li className="nav-item"><Link className="nav-link" to="/product">Product </Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/products">Products</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
             </ul>
 
-            <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          </form>
+
             <Link className="navbar-brand" to="/search"><i className="fas fa-search fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
           <Link className="navbar-brand" to="/cart"><i className="fa fa-shopping-cart fa-1x my-1" style={{fontSize: "1.5em"}}aria-hidden="true"></i></Link>
           <Link className="navbar-brand" to="/account"><i className="fas fa-user-circle fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>

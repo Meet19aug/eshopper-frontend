@@ -2,15 +2,18 @@ import React, { Fragment, useEffect } from 'react'
 import Carousel from 'react-material-ui-carousel'
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from 'react-redux'
-import { getProductDetails } from '../../actions/productAction';
+import { clearErrors, getProductDetails } from '../../actions/productAction';
 import ReactStars from 'react-rating-stars-component';
 import ReviewCard from "./ReviewCard.js"
 import { useParams } from "react-router-dom";
+import Loader from "../layout/Loader/Loader";
+import {useAlert} from "react-alert";
 
 
 // For backend req.params.id as same way for frontend match is used.
 const ProductDetails = () => {
     const dispatch = useDispatch();
+    const alert = useAlert();
     const { id } = useParams();
 
     //This will fetch data from redux Store to frontend.
@@ -18,8 +21,12 @@ const ProductDetails = () => {
 
     //This will only fetch data from backend to redux store 
     useEffect(() => {
+        if(error){
+            alert.error(error);
+            dispatch(clearErrors())
+        }
         dispatch(getProductDetails(id))
-    }, [dispatch, id])
+    }, [dispatch, id, error,alert])
 
     const options = {
         edit: false,
@@ -31,6 +38,7 @@ const ProductDetails = () => {
     }
     return (
         <Fragment>
+            {loading ? <Loader/> : (<Fragment>
             <div className="ProductDetails">
                 <div>
                     <Carousel>
@@ -95,7 +103,9 @@ const ProductDetails = () => {
             ) : (
                 <p className="noReviews">No Reviews Yet</p>
             )}
+        </Fragment>)}
         </Fragment>
+        
     )
 }
 

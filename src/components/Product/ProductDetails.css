@@ -155,7 +155,7 @@
   padding: 1rem;
   font: 300 1rem "Roboto";
 }
-
+ /* Review Css */
 .reviewsHeading {
   color: #000000be;
   font: 500 1.4vmax "Roboto";
@@ -173,7 +173,7 @@
 
 .reviewCard {
   flex: none;
-
+  /* As we required no compression in review arrangment in row so we did flex:none */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
   width: 30vmax;

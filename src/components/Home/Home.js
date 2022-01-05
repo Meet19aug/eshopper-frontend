@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import "./Home.css";
-import Product from "./Product"
+import Product from "./ProductCard"
 import MetaData from "../layout/MetaData";
-import { getProduct } from "../../actions/productAction";
+import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
-import {useAlert} from "react-alert";
+import { useAlert } from "react-alert";
 
 
 const Home = () => {
@@ -15,11 +15,12 @@ const Home = () => {
   const { loading, error, products, productsCount } = useSelector(state => state.products)
 
   useEffect(() => {
-    if(error){
-      return alert.error(error)
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors())
     }
     dispatch(getProduct())
-  }, [dispatch, error])
+  }, [dispatch, error, alert])
   return (
     <Fragment>
       {loading ? (
@@ -42,7 +43,7 @@ const Home = () => {
 
           <div className="container" id="container">
             {products && products.map(product => (
-              <Product product={product} key={product}/>
+              <Product product={product} key={products._id} />
             ))}
           </div>
         </Fragment>

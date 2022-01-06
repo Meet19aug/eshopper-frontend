@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 import "./Search.css";
 /*
 For Adding Search Functionality 1>.Backend Functionality is working properly.  2>.Action>productAction 

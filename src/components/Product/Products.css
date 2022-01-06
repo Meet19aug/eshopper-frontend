@@ -15,7 +15,7 @@
     justify-content: center;
     min-height: 30vh;
   }
-  
+  /*  Pagination css */
   .paginationBox {
     display: flex;
     justify-content: center;
@@ -65,14 +65,14 @@
   .pageLinkActive {
     color: white;
   }
-  
+  /* Filter Box Css */
   .filterBox {
     width: 10vmax;
     position: absolute;
     top: 10vmax;
     left: 4vmax;
   }
-  
+  /*  Category filteration */
   .categoryBox {
     padding: 0%;
   }

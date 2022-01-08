@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import MetaData from "../layout/MetaData";
 import "./Search.css";
 /*
 For Adding Search Functionality 1>.Backend Functionality is working properly.  2>.Action>productAction 
@@ -21,15 +22,17 @@ const Search = () => {
     };
     return (
         <Fragment>
+            <MetaData title="Search A Product -- Eshopper" />
+
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident delectus alias natus maxime quam eius magni illum minima consectetur assumenda.
             </p>
-             <form className="searchBox" onSubmit={searchSubmitHandler}>
+            <form className="searchBox" onSubmit={searchSubmitHandler}>
                 <input
                     type="text"
                     placeholder="Search a Product ..."
                     onChange={(e) => setKeyword(e.target.value)}
                 />
-                <input type="submit" value="Search"/>
+                <input type="submit" value="Search" />
             </form>
         </Fragment>
     )

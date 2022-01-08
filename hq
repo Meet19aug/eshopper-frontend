@@ -1,0 +1,59 @@
+[33mcommit a402844aa7664d02fc93a55bcfbbbb172ef248b3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Thu Jan 6 23:29:52 2022 +0530
+
+    Pagination is  working & Page Filteration Working.
+
+[33mcommit b3d424fca67479b4838db7b9534f992fecd426ac[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Thu Jan 6 00:35:54 2022 +0530
+
+    Added Seach Functionality to the program.
+
+[33mcommit ceeb8463204fd76882f01d2669a93ade9415f530[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Wed Jan 5 21:44:04 2022 +0530
+
+    Changed File name product.js to ProductCard.js in HomeFolder, Implimented ReviewCard.
+
+[33mcommit 81abb67bf7cc247d2f6f38d3f0a65594d8f572df[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Tue Jan 4 23:10:16 2022 +0530
+
+    Changed some Dependenci and Image is Loading fine.Working on Review
+
+[33mcommit 52066ec4c1b67ba8218c69cd84b933592a59e5b6[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Tue Jan 4 01:22:17 2022 +0530
+
+    Added Product Detail components But Image is not loading, Changed name in backend
+
+[33mcommit ab7b2218431028e372dfe660bc19054c7f19cd6c[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Sat Jan 1 22:53:38 2022 +0530
+
+    Successfully Used redux for GetAllProduct, implementing Loader,& Error
+
+[33mcommit 7be819842f5746fbebd0573cd671f7046e239d7c[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Sat Jan 1 22:09:05 2022 +0530
+
+    Create basic template for Redux and fetched getProducts & store in redux store with added actions, constants, and reducers
+
+[33mcommit 5415ebb981e183a5c7641bf627921243c1839b64[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Sat Jan 1 16:46:47 2022 +0530
+
+    Added Successfuly Home Components with some hard elements
+
+[33mcommit ad8847541f31b11afba2cf757d1aa936047b85a7[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Sat Jan 1 01:22:30 2022 +0530
+
+    Header & Footer Added to frontend
+
+[33mcommit e83db2d9d98633edc560dfdc62ebd198fda4446b[m
+Author: Meet Patel <meetpatel19aug@gmail.com>
+Date:   Fri Dec 31 17:30:14 2021 +0530
+
+    Initialize the work of overlay navbar

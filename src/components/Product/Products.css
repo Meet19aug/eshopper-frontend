@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     padding: 0 5vmax;
     justify-content: center;
-    min-height: 30vh;
+    min-height: 40vh;
   }
   /*  Pagination css */
   .paginationBox {
@@ -88,7 +88,7 @@
   .category-link:hover {
     color: tomato;
   }
-  
+  /* Ratings Css */
   .filterBox > fieldset {
     border: 1px solid rgba(0, 0, 0, 0.329);
   }

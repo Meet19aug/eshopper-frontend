@@ -8,6 +8,7 @@ import ReviewCard from "./ReviewCard.js"
 import { useParams } from "react-router-dom";
 import Loader from "../layout/Loader/Loader";
 import {useAlert} from "react-alert";
+import MetaData from '../layout/MetaData';
 
 
 // For backend req.params.id as same way for frontend match is used.
@@ -40,6 +41,7 @@ const ProductDetails = () => {
         <Fragment>
             {loading ? <Loader/> : (<Fragment>
             <div className="ProductDetails">
+                <MetaData title={`${product.name} -- ESHOPPER`}/>
                 <div>
                     <Carousel>
                         {product.images &&

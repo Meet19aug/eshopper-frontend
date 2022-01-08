@@ -8,6 +8,7 @@ import ProductDetails from "./components/Product/ProductDetails.js"
 import Search from "./components/Product/Search.js" 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WebFont from "webfontloader"; 
+import LoginSignUp from "./components/User/LoginSignUp";
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <Route exact path="/products" element={<Products/>}/>
         <Route path="/products/:keyword" element={<Products/>}/>
         <Route exact path="/search" element={<Search/>}/>
+        <Route exact path="/login" element={<LoginSignUp/>}/>
+
       </Routes>
       <Footer/>
 

@@ -22,7 +22,7 @@ const Header = () => {
 
             <Link className="navbar-brand" to="/search"><i className="fas fa-search fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
           <Link className="navbar-brand" to="/cart"><i className="fa fa-shopping-cart fa-1x my-1" style={{fontSize: "1.5em"}}aria-hidden="true"></i></Link>
-          <Link className="navbar-brand" to="/account"><i className="fas fa-user-circle fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
+          <Link className="navbar-brand" to="/login"><i className="fas fa-user-circle fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
           </div>
         </div>
       </nav>

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import "./Home.css";
-import Product from "./ProductCard"
+import ProductCard from "./ProductCard";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
@@ -32,7 +32,7 @@ const Home = () => {
             <p>Welcome to Ecommerce</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
 
-            <a href="#container">
+            <a href="#productContainer">
               <button>
                 Scroll <CgMouse />
               </button>
@@ -41,9 +41,9 @@ const Home = () => {
 
           <h2 className="homeHeading">Featured Products</h2>
 
-          <div className="container" id="container">
+          <div className="container" id="productContainer">
             {products && products.map(product => (
-              <Product product={product} key={product._id} />
+              <ProductCard product={product} key={product._id} />
             ))}
           </div>
         </Fragment>

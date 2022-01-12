@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const LoginSignUp = () => {
-    let history = useNavigate();
+    let navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
     const {error, loading, isAuthenticated} = useSelector((state) => state.user);
@@ -76,9 +76,9 @@ const LoginSignUp = () => {
               dispatch(clearErrors);
           }
           if(isAuthenticated){
-            history("/account");
+            navigate("/account");
           }
-      }, [dispatch,alert, error, history, isAuthenticated])
+      }, [dispatch,alert, error, navigate, isAuthenticated])
     const switchTabs = (e, tab) => {
         if (tab === "login") {
             switcherTab.current.classList.add("shiftToNeutral");

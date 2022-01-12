@@ -41,9 +41,10 @@ function App() {
   return (
     <>
     <Router>
-    <Wrapper>
+    
       <Header/>
       {isAuthenticated && <UserOptions user={user}/>}
+      <Wrapper>
       <Routes>
         <Route exact path="/" element={<Home /> }/>
         <Route exact path="/product/:id" element={<ProductDetails/>}/>
@@ -52,11 +53,12 @@ function App() {
         <Route exact path="/search" element={<Search/>}/>
         <Route exact path="/login" element={<LoginSignUp/>}/>
       </Routes>
-      <Footer/>
       </Wrapper>
+      <Footer/>
+      
     </Router>
     </>
   );
 }
-//8:16:00
+//8:30:00
 export default App;

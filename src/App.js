@@ -7,7 +7,7 @@ import Products from "./components/Product/Products.js";
 import ProductDetails from "./components/Product/ProductDetails.js"
 import Search from "./components/Product/Search.js" 
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 
 import WebFont from "webfontloader"; 
 import LoginSignUp from "./components/User/LoginSignUp";
@@ -15,6 +15,9 @@ import store from "./store"
 import { loadUser } from "./actions/userAction";
 import UserOptions from "./components/layout/Header/UserOptions.js"
 import { useSelector } from "react-redux";
+import Profile from "./components/User/Profile.js"
+import UpdateProfile from "./components/User/UpdateProfile.js"
+// Not Used as it create problems.
 
 //https://stackoverflow.com/questions/70193712/how-to-scroll-to-top-on-route-change-with-react-router-dom-v6#:~:text=You%20can%20use%20the%20above,()%3B%20%7D%20%7D%2C%20%5BasPath%5D)%3B
 const Wrapper = ({children}) => {
@@ -52,6 +55,8 @@ function App() {
         <Route path="/products/:keyword" element={<Products/>}/>
         <Route exact path="/search" element={<Search/>}/>
         <Route exact path="/login" element={<LoginSignUp/>}/>
+        {isAuthenticated && <Route exact path="/account" element={<Profile/>}/>}
+        {isAuthenticated && <Route exact path="/me/update" element={<UpdateProfile/>}/>}
       </Routes>
       </Wrapper>
       <Footer/>
@@ -60,5 +65,5 @@ function App() {
     </>
   );
 }
-//8:30:00
+//8:45:00
 export default App;

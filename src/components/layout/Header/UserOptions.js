@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import "./Header.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
+import BackDrop from "@material-ui/core/Backdrop"
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
@@ -43,6 +44,7 @@ const UserOptions = ({ user }) => {
 
     return (
         <Fragment>
+            <BackDrop open={open} style={{zIndex: "10"}}/> {/*  When SpeedDial is open it makes background blur*/}
             <SpeedDial
                 className="speedDial"
                 ariaLabel='SpeedDial tooltip example'

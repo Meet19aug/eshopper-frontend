@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Carousel from 'react-material-ui-carousel'
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import MetaData from '../layout/MetaData';
+import { addItemsToCart } from '../../actions/cartAction';
 
 
 // For backend req.params.id as same way for frontend match is used.
@@ -20,6 +21,34 @@ const ProductDetails = () => {
     //This will fetch data from redux Store to frontend.
     const { product, loading, error } = useSelector((state) => state.productDetails)
 
+    const options = {
+        edit: false,
+        color: "rgba(20,20,20,0.1)",
+        activeColor: "tomato",
+        size: window.innerWidth < 600 ? 20 : 25,
+        value: product.ratings,
+        isHalf: true,
+    }
+    const [quantity, setQuantity] = useState(1);
+
+    const increseQuantity = () => {
+        if (product.Stock <= quantity) return;
+        const qty = quantity + 1;
+        setQuantity(qty);
+    }
+
+    const decreseQuantity = () => {
+        if (quantity <= 1) return;
+        const qty = quantity - 1;
+        setQuantity(qty);
+    }
+
+    //Functionality for add to cart Button
+    const addToCartHandler = () => {
+        dispatch(addItemsToCart(id, quantity));
+        alert.success("Item Added To Cart");
+    }
+
     //This will only fetch data from backend to redux store 
     useEffect(() => {
         if (error) {
@@ -29,14 +58,7 @@ const ProductDetails = () => {
         dispatch(getProductDetails(id))
     }, [dispatch, id, error, alert])
 
-    const options = {
-        edit: false,
-        color: "rgba(20,20,20,0.1)",
-        activeColor: "tomato",
-        size: window.innerWidth < 600 ? 20 : 25,
-        value: product.ratings,
-        isHalf: true,
-    }
+
     return (
         <Fragment>
             {loading ? <Loader /> : (<Fragment>
@@ -68,11 +90,11 @@ const ProductDetails = () => {
                             <h1>{`₹${product.price}`}</h1>
                             <div className="detailsBlock-3-1">
                                 <div className="detailsBlock-3-1-1">
-                                    <button>-</button>
-                                    <input type="number" />
-                                    <button >+</button>
+                                    <button onClick={decreseQuantity}>-</button>
+                                    <input readOnly type="number" value={quantity} />
+                                    <button onClick={increseQuantity}>+</button>
                                 </div>
-                                <button>
+                                <button onClick={addToCartHandler}>
                                     Add to Cart
                                 </button>
                             </div>

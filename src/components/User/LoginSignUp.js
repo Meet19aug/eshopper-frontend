@@ -8,11 +8,11 @@ import FaceIcon from "@material-ui/icons/Face";
 import {useDispatch, useSelector} from "react-redux"; 
 import { clearErrors,login, register } from '../../actions/userAction';
 import {useAlert} from "react-alert";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
-const LoginSignUp = () => {
+const LoginSignUp = ({location}) => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -69,16 +69,20 @@ const LoginSignUp = () => {
           setUser({ ...user, [e.target.name]: e.target.value });
         }
       };
-
+    //   const redirectURL = location.search ? location.search.split("?")[1] : "/account";
+    //https://stackoverflow.com/questions/64566405/react-router-dom-v6-usenavigate-passing-value-to-another-component/64566486
+      const { state } = useLocation();
+      console.log("State is :", state);
+      const redirectURL = state ? state : "/account";
       useEffect(() => {
           if(error){
               alert.error(error);
               dispatch(clearErrors);
           }
           if(isAuthenticated){
-            navigate("/account");
+            navigate(redirectURL);
           }
-      }, [dispatch,alert, error, navigate, isAuthenticated])
+      }, [dispatch,alert, error, navigate, isAuthenticated, redirectURL])
     const switchTabs = (e, tab) => {
         if (tab === "login") {
             switcherTab.current.classList.add("shiftToNeutral");

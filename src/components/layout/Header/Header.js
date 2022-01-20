@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+
   return (
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -21,7 +24,7 @@ const Header = () => {
 
 
             <Link className="navbar-brand" to="/search"><i className="fas fa-search fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
-          <Link className="navbar-brand" to="/cart"><i className="fa fa-shopping-cart fa-1x my-1" style={{fontSize: "1.5em"}}aria-hidden="true"></i></Link>
+          <Link className="navbar-brand" to="/cart"><i className="fa fa-shopping-cart fa-1x my-1" style={{fontSize: "1.5em", color: cartItems.length > 0 ? "tomato" : "unset" }}aria-hidden="true"></i></Link>
           <Link className="navbar-brand" to="/login"><i className="fas fa-user-circle fa-1x my-1" style={{fontSize: "1.5em"}}></i></Link>
           </div>
         </div>

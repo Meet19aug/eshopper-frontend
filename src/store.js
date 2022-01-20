@@ -20,6 +20,9 @@ let intialState = {
         cartItems: localStorage.getItem("cartItems") // same name as given in cartAction to store locally
         ? JSON.parse(localStorage.getItem("cartItems"))
         : [],
+        shippingInfo: localStorage.getItem("shippingInfo") // same name as given in cartAction to store locally
+        ? JSON.parse(localStorage.getItem("shippingInfo"))
+        : {},
     }
 };
 

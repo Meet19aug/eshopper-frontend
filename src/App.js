@@ -21,6 +21,7 @@ import UpdatePassword from "./components/User/UpdatePassword.js"
 import ForgotPassword from "./components/User/ForgotPassword.js"
 import ResetPassword from "./components/User/ResetPassword.js"
 import Cart from "./components/Cart/Cart.js"
+import Shipping from "./components/Cart/Shipping.js"
 // Not Used as it create problems.
 
 //https://stackoverflow.com/questions/70193712/how-to-scroll-to-top-on-route-change-with-react-router-dom-v6#:~:text=You%20can%20use%20the%20above,()%3B%20%7D%20%7D%2C%20%5BasPath%5D)%3B
@@ -65,6 +66,7 @@ function App() {
         {isAuthenticated && <Route exact path="/account" element={<Profile/>}/>}
         {isAuthenticated && <Route exact path="/me/update" element={<UpdateProfile/>}/>}
         {isAuthenticated && <Route exact path="/password/update" element={<UpdatePassword/>}/>}
+        {isAuthenticated && <Route exact path="/shipping" element={<Shipping/>}/>}
       </Routes>
       </Wrapper>
       <Footer/>
@@ -73,5 +75,5 @@ function App() {
     </>
   );
 }
-//10:22:00
+//11:00:00
 export default App;

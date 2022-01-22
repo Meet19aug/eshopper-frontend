@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { productDetailsReducer, productReducer } from "./reducers/productReducer"
 import { profileReducer, userReducer, forgotPasswordReducer } from "./reducers/userReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import { newOrderReducer } from "./reducers/orderReducer";
 
 const reducer = combineReducers({
     products: productReducer,
@@ -13,6 +14,7 @@ const reducer = combineReducers({
     profile: profileReducer,
     forgotPassword : forgotPasswordReducer, 
     cart : cartReducer,
+    newOrder : newOrderReducer
 });
 // if local storage has data than take it otherwise empty
 let intialState = {

@@ -28,6 +28,7 @@ import Payment from "./components/Cart/Payment.js"
 import {Elements} from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import OrderSuccess from "./components/Cart/OrderSuccess.js"
+import MyOrders from "./components/Order/MyOrders.js"
 
 // Not Used as it create problems.
 
@@ -88,6 +89,8 @@ function App() {
         {isAuthenticated  && <Route exact path="/process/payment" element={<Elements stripe={loadStripe(stripeApiKey)}><Payment/></Elements>}/>}
         
         {isAuthenticated && <Route exact path="/success" element={<OrderSuccess/>}/>}
+        {isAuthenticated && <Route exact path="/orders" element={<MyOrders/>}/>}
+
 
       </Routes>
       </Wrapper>
@@ -97,5 +100,5 @@ function App() {
     </>
   );
 }
-//11:38:00
+//11:58:00
 export default App;

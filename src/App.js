@@ -29,6 +29,7 @@ import {Elements} from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import OrderSuccess from "./components/Cart/OrderSuccess.js"
 import MyOrders from "./components/Order/MyOrders.js"
+import OrderDetails from "./components/Order/OrderDetails.js"
 
 // Not Used as it create problems.
 
@@ -48,7 +49,7 @@ function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey(){
-    const {data} =await axios("api/v1/stripeapikey");
+    const {data} =await axios("/api/v1/stripeapikey");
 
     setStripeApiKey(data.stripeApiKey);
   }
@@ -90,6 +91,8 @@ function App() {
         
         {isAuthenticated && <Route exact path="/success" element={<OrderSuccess/>}/>}
         {isAuthenticated && <Route exact path="/orders" element={<MyOrders/>}/>}
+        {isAuthenticated && <Route exact path="/order/:id" element={<OrderDetails/>}/>}
+
 
 
       </Routes>
@@ -100,5 +103,5 @@ function App() {
     </>
   );
 }
-//11:58:00
+//12:28:00
 export default App;

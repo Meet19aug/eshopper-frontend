@@ -50,9 +50,9 @@
   padding: 1vmax 0;
 }
 
-.detailsBlock-2 span {
+.detailsBlock-2-span {
   color: rgba(0, 0, 0, 0.699);
-  font: 200 0.9vmax cursive;
+  font: 200 1vmax cursive;
 }
 
 .detailsBlock-3 {
@@ -148,7 +148,7 @@
   transition: all 0.5s;
   outline: none;
 }
-/* .submitReview:hover {
+.submitReview:hover {
   background-color: rgb(197, 68, 45);
   transform: scale(1.1);
 }
@@ -163,7 +163,7 @@
   outline: none;
   padding: 1rem;
   font: 300 1rem "Roboto";
-} */
+} 
  /* Review Css */
 .reviewsHeading {
   color: #000000be;
@@ -203,7 +203,7 @@
   font: 600 1.2vmax "Roboto";
 }
 
-.reviewCard > span {
+.reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
   font: 300 1vmax cursive;
 }

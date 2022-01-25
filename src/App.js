@@ -30,6 +30,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import OrderSuccess from "./components/Cart/OrderSuccess.js"
 import MyOrders from "./components/Order/MyOrders.js"
 import OrderDetails from "./components/Order/OrderDetails.js"
+import Dashboard from "./components/Admin/Dashboard.js";
+// import ProtectedRoute from "./components/Route/ProtectedRoute";
+import ProductList from "./components/Admin/ProductList.js"
+import NewProduct from "./components/Admin/NewProduct";
 
 // Not Used as it create problems.
 
@@ -47,6 +51,7 @@ function App() {
   const {isAuthenticated, user} = useSelector(state=>state.user);
 
   const [stripeApiKey, setStripeApiKey] = useState("");
+
 
   async function getStripeApiKey(){
     const {data} =await axios("/api/v1/stripeapikey");
@@ -93,6 +98,12 @@ function App() {
         {isAuthenticated && <Route exact path="/orders" element={<MyOrders/>}/>}
         {isAuthenticated && <Route exact path="/order/:id" element={<OrderDetails/>}/>}
 
+        {/* Admin Routes  */}
+        {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/dashboard" element={<Dashboard/>}/>}
+        {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/products" element={<ProductList/>}/>}
+        {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/product/" element={<NewProduct/>}/>}
+
+
 
 
       </Routes>
@@ -103,5 +114,5 @@ function App() {
     </>
   );
 }
-//12:28:00
+//12:38:00
 export default App;

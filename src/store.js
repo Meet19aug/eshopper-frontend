@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { composeWithDevTools } from "redux-devtools-extension";
-import { newReviewReducer, productDetailsReducer, productReducer } from "./reducers/productReducer"
+import { newProductReducer, newReviewReducer, productDetailsReducer, productReducer } from "./reducers/productReducer"
 import { profileReducer, userReducer, forgotPasswordReducer } from "./reducers/userReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { myOrderReducer, newOrderReducer, orderDetailsReducer } from "./reducers/orderReducer";
@@ -18,6 +18,7 @@ const reducer = combineReducers({
     myOrders : myOrderReducer,
     orderDetails: orderDetailsReducer,
     newReview: newReviewReducer,
+    newProduct: newProductReducer,
 });
 // if local storage has data than take it otherwise empty
 let intialState = {

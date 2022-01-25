@@ -4,6 +4,7 @@ footer{
     color: white;
     display: flex;
     align-items: center;
+    margin-top: 10vh;
   }
   
   .leftFooter {

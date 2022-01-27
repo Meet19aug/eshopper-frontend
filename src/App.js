@@ -34,6 +34,7 @@ import Dashboard from "./components/Admin/Dashboard.js";
 // import ProtectedRoute from "./components/Route/ProtectedRoute";
 import ProductList from "./components/Admin/ProductList.js"
 import NewProduct from "./components/Admin/NewProduct";
+import UpdateProduct from "./components/Admin/UpdateProduct.js"
 
 // Not Used as it create problems.
 
@@ -102,6 +103,7 @@ function App() {
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/dashboard" element={<Dashboard/>}/>}
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/products" element={<ProductList/>}/>}
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/product/" element={<NewProduct/>}/>}
+        {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/product/:id" element={<UpdateProduct/>}/>}
 
 
 
@@ -114,5 +116,5 @@ function App() {
     </>
   );
 }
-//12:38:00
+//13:46:00
 export default App;

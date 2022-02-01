@@ -13,7 +13,6 @@ import { useParams } from "react-router-dom";
 
 const OrderDetails = () => {
   const { id } = useParams();
-  console.log("Id in Order Deatials Page is : ", id);
 
   const { order, error, loading } = useSelector((state) => state.orderDetails);
   const dispatch = useDispatch();

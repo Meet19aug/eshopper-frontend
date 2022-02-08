@@ -39,6 +39,7 @@ import OrderList from "./components/Admin/OrderList.js"
 import ProcessOrder from "./components/Admin/ProcessOrder.js"
 import UsersList from "./components/Admin/UsersList.js"
 import UpdateUser from "./components/Admin/UpdateUser.js"
+import ProductReviews from "./components/Admin/ProductReviews.js"
 
 
 // Not Used as it create problems.
@@ -113,6 +114,7 @@ function App() {
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/order/:id" element={<ProcessOrder/>}/>}
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/users" element={<UsersList/>}/>}
         {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/user/:id" element={<UpdateUser/>}/>}
+        {isAuthenticated  && user.role==="admin" &&<Route exact path="/admin/reviews" element={<ProductReviews/>}/>}
 
 
 
@@ -124,5 +126,5 @@ function App() {
     </>
   );
 }
-//14:28:00
+//15:00:00
 export default App;

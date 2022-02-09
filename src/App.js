@@ -40,6 +40,8 @@ import ProcessOrder from "./components/Admin/ProcessOrder.js"
 import UsersList from "./components/Admin/UsersList.js"
 import UpdateUser from "./components/Admin/UpdateUser.js"
 import ProductReviews from "./components/Admin/ProductReviews.js"
+import Contact from "./components/layout/Contact/Contact.js";
+import About from "./components/layout/About/About.js";
 
 
 // Not Used as it create problems.
@@ -87,12 +89,15 @@ function App() {
         <Route exact path="/" element={<Home /> }/>
         <Route exact path="/product/:id" element={<ProductDetails/>}/>
         <Route exact path="/products" element={<Products/>}/>
+        <Route exact path="/contact" element={<Contact/>}/>
+        <Route exact path="/about" element={<About/>}/>
         <Route path="/products/:keyword" element={<Products/>}/>
         <Route exact path="/search" element={<Search/>}/>
         <Route exact path="/login" element={<LoginSignUp/>}/>
         <Route exact path="/password/forgot" element={<ForgotPassword/>}/>
         <Route exact path="/password/reset/:token" element={<ResetPassword/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
+        
         {isAuthenticated && <Route exact path="/account" element={<Profile/>}/>}
         {isAuthenticated && <Route exact path="/me/update" element={<UpdateProfile/>}/>}
         {isAuthenticated && <Route exact path="/password/update" element={<UpdatePassword/>}/>}
